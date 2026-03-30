@@ -339,11 +339,12 @@
         });
         
         document.getElementById('enter-vr-btn').addEventListener('click', () => {
-            if (!renderer.xr.isPresenting) {
-                renderer.xr.setSessionEnabled(true);
-                setStatus('🥽 Вход в VR... Наденьте шлем');
-            }
-        });
+    if (!renderer.xr.isPresenting) {
+        // Правильный метод для входа в VR
+        renderer.xr.setSession(true);
+        setStatus('🥽 Вход в VR... Наденьте шлем');
+    }
+});
         
         document.getElementById('add-light-btn').addEventListener('click', addTorchLight);
         document.getElementById('move-light-btn').addEventListener('click', moveTorch);
